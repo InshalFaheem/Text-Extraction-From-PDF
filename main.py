@@ -1,3 +1,6 @@
-import PyPDF2
-PyPDF2.PdfFileReader('data_sample.pdf')
-
+import fitz
+pdf = "CV.pdf"
+doc = fitz.open(pdf)
+for page in doc:
+    text = page.getText("text")
+    print(text)
